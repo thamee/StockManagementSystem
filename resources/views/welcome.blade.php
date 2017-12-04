@@ -53,7 +53,7 @@
             <tr>
                 <th class="text-center">#</th>
                 <th class="text-center">Name</th>
-                <th class="text-center">Actions</th>
+                <th class="text-center">Act</th>
             </tr>
             </thead>
             <label for="name">Name</label>
