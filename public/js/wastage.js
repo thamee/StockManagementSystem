@@ -66,12 +66,10 @@ $(document).ready(function() {
                 'amount_of_wastage': $('#uid').val(),
             },
             success: function(data) {
-                $('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.stock_no +"</td><td>" + data.stock_name +"</td><td>" + data.stock_unit + "</td><td>" + data.stock_unit + "</td><td>" + data.amount_of_wastage +"</td><td>" + data.amount_of_wastage  +"</td><td><button class='edit-modal btn btn-info' data-id='" + data.id + "' data-stock_no='" + data.stock_no +"' data-stock_name='" + data.stock_name + "' data-stock_unit='" + data.stock_unit +"' data-amount_of_wastage='" + data.amount_of_wastage +"'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-stock_no='" + data.stock_no +"' data-stock_name='" + data.stock_name +"' data-stock_unit='" + data.stock_unit +"' data-amount_of_wastage='" + data.amount_of_wastage  +   "' ><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
+                $('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.stock_no +"</td><td>" + data.stock_name +"</td><td>" + data.stock_unit + "</td><td>" + data.amount_of_wastage   +"</td><td><button class='edit-modal btn btn-info' data-id='" + data.id + "' data-stock_no='" + data.stock_no +"' data-stock_name='" + data.stock_name + "' data-stock_unit='" + data.stock_unit +"' data-amount_of_wastage='" + data.amount_of_wastage  +"'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-stock_no='" + data.stock_no +"' data-stock_name='" + data.stock_name +"' data-stock_unit='" + data.stock_unit +"' data-amount_of_wastage='" + data.amount_of_wastage +   "' ><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
             }
         });
     });
-
-
 
 
     $("#add").click(function() {
@@ -97,7 +95,7 @@ $(document).ready(function() {
                 }
                 else {
                     $('.error').addClass('hidden');
-                    $('#table').append("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.stock_no +"</td><td>" + data.stock_name +"</td><td>" + data.stock_unit + "</td><td>" + data.amount_of_wastage +"'><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
+                    $('#table').append("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.stock_no +"</td><td>" + data.stock_name +"</td><td>" + data.stock_unit + "</td><td>" + data.amount_of_wastage  +"</td><td><button class='edit-modal btn btn-info' data-id='" + data.id + "' data-stock_no='" + data.stock_no +"' data-stock_name='" + data.stock_name + "' data-stock_unit='" + data.stock_unit +"' data-amount_of_wastage'" + data.amount_of_wastage   +"'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-stock_no='" + data.stock_no + "' data-stock_name='" + data.stock_name + "' data-stock_unit='" + data.stock_unit +"' data-amount_of_wastage='" + data.amount_of_wastage   +"'><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
                 }
             },
 
