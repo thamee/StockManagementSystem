@@ -36,14 +36,13 @@ class StockinController extends Controller
             $data->sup_id = $request->sup_id;
             $data->order_date = $request->order_date;
             $data->stock_no = $request->stock_no;
-            $st->stock_no = $request->stock_no;
-            $st->stock_amount = $request->stock_amount;
+
 
             $data->stock_name = $request->stock_name;
             $data->stock_unit = $request->stock_unit;
             $data->stock_amount = $request->stock_amount;
             $data->save();
-            $st->save();
+
 
             return response()->json($data);
         }
