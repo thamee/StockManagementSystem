@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class stock extends Model
+class stock_in extends Model
 {
-    protected $table = 'stock';
+    protected $table = 'stock_in';
     public $timestamps = false;
 }
