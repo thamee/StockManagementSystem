@@ -26,6 +26,7 @@
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
+    <a href="#about" class="pull-right" >Logout</a>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 <br>
