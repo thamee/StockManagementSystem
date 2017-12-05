@@ -9,7 +9,7 @@ use Response;
 use Illuminate\Support\Facades\Input;
 class SupplierController extends Controller
 {
-    public function addItem(Request $request)
+    public function supadd(Request $request)
     {
         $rules = array(
             'sup_id' => 'required|alpha_num',
@@ -42,7 +42,7 @@ class SupplierController extends Controller
 
         return view('supplier')->withData($data);
     }
-    public function editItem(Request $req)
+    public function supedit(Request $req)
     {
         $data = supplier::find($req->id);
         $data->sup_id = $req->sup_id;
@@ -54,7 +54,7 @@ class SupplierController extends Controller
 
         return response()->json($data);
     }
-    public function deleteItem(Request $req)
+    public function supdelete(Request $req)
     {
         Supplier::find($req->id)->delete();
 

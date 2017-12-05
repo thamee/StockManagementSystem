@@ -9,7 +9,7 @@ use Response;
 use Illuminate\Support\Facades\Input;
 class StockReturnController extends Controller
 {
-    public function addItem(Request $request)
+    public function stockadd(Request $request)
     {
         $rules = array(
             'stock_no' => 'required|alpha_num',
@@ -46,7 +46,7 @@ class StockReturnController extends Controller
 
         return view('stockreturn')->withData($data);
     }
-    public function editItem(Request $req)
+    public function stockedit(Request $req)
     {
         $data = stockreturn::find($req->id);
         $data->stock_no = $req->stock_no;
@@ -60,7 +60,7 @@ class StockReturnController extends Controller
 
         return response()->json($data);
     }
-    public function deleteItem(Request $req)
+    public function stockdelete(Request $req)
     {
         stockreturn::find($req->id)->delete();
 

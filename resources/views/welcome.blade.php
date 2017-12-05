@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
 </head>
 <body>
+
 <nav class="navbar navbar-default navbar-fixed-top">
     <ul class="nav navbar-nav">
         <li><a href="http://justlaravel.com/">justlaravel.com</a></li>
@@ -28,6 +29,7 @@
 </nav>
 <br><br><br><br>
 <div class="container">
+    <h3> PRODUCT DETAILS</h3>
     <button id="btn_add" name="btn_add" class="btn btn-default pull-right">Add New Product</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">

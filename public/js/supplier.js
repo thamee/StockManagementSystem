@@ -58,7 +58,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'post',
-            url: '/editItem',
+            url: '/supedit',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#fid").val(),
@@ -81,7 +81,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'post',
-            url: '/addItem',
+            url: '/supadd',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'sup_id': $('input[name=sup_id]').val(),
@@ -115,7 +115,7 @@ $(document).ready(function() {
     $('.modal-footer').on('click', '.delete', function() {
         $.ajax({
             type: 'post',
-            url: '/deleteItem',
+            url: '/supdelete',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $('.did').text()

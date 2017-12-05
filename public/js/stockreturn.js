@@ -62,7 +62,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'post',
-            url: '/editItem',
+            url: '/stockedit',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#fid").val(),
@@ -87,7 +87,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'post',
-            url: '/addItem',
+            url: '/stockadd',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'stock_no': $('input[name=stock_no]').val(),
@@ -106,25 +106,29 @@ $(document).ready(function() {
                     $('.error').text(data.errors.stock_name);
                     $('.error').text(data.errors.sup_id);
                     $('.error').text(data.errors.sup_name);
-                    $('.error').text(data.errors.rece);
+                    $('.error').text(data.errors.received_date);
+                    $('.error').text(data.errors.return_date);
+                    $('.error').text(data.errors.stock_amount);
                 }
                 else {
                     $('.error').addClass('hidden');
-                    $('#table').append("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.sup_id +"</td><td>" + data.sup_name +"</td><td>" + data.address + "</td><td>" + data.contact_no +"</td><td>" + data.email +"</td><td><button class='edit-modal btn btn-info' data-id='" + data.id + "' data-sup_id='" + data.sup_id +"' data-sup_name='" + data.sup_name + "' data-address='" + data.address +"' data-contact_no='" + data.contact_no +"' data-email='" + data.email +"'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-sup_id='" + data.sup_id + "' data-sup_name='" + data.sup_name + "' data-address='" + data.address +"' data-contact_no='" + data.contact_no +"' data-email='" + data.email +"'><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
+                    $('#table').append("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.stock_no +"</td><td>" + data.stock_name +"</td><td>" + data.sup_id + "</td><td>" + data.sup_name +"</td><td>" + data.received_date +"</td><td>" + data.return_date +"</td><td>" + data.stock_amount +"</td><td><button class='edit-modal btn btn-info' data-id='" + data.id + "' data-stock_no='" + data.stock_no +"' data-stock_name='" + data.stock_name + "' data-sup_id='" + data.sup_id +"' data-sup_name='" + data.sup_name +"' data-received_date='" + data.received_date +"' data-return_date='" + data.return_date +"' data-stock_amount='" + data.stock_amount +"'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-stock_no='" + data.stock_no + "' data-stock_name='" + data.stock_name + "' data-sup_id='" + data.sup_id +"' data-sup_name='" + data.sup_name +"' data-received_date='" + data.received_date +"' data-return_date='" + data.return_date +"' data-stock_amount='" + data.stock_amount +"'><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
                 }
             },
 
         });
+        $('#stock_no').val('');
+        $('#stock_name').val('');
         $('#sup_id').val('');
         $('#sup_name').val('');
-        $('#address').val('');
-        $('#contact_no').val('');
-        $('#email').val('');
+        $('#received_date').val('');
+        $('#return_date').val('');
+        $('#stock_amount').val('');
     });
     $('.modal-footer').on('click', '.delete', function() {
         $.ajax({
             type: 'post',
-            url: '/deleteItem',
+            url: '/stockdelete',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $('.did').text()

@@ -24,9 +24,15 @@ Route::post('editItem', 'IndexController@editItem');
 Route::post('deleteItem', 'IndexController@deleteItem');
 
 Route::get('/supplier', 'SupplierController@readItems');
-Route::post('addItem', 'SupplierController@addItem');
-Route::post('editItem', 'SupplierController@editItem');
-Route::post('deleteItem', 'SupplierController@deleteItem');
+Route::post('supadd', 'SupplierController@supadd');
+Route::post('supedit', 'SupplierController@supedit');
+Route::post('supdelete', 'SupplierController@supdelete');
+
+
+Route::get('/stockreturn', 'StockReturnController@readItems');
+Route::post('stockadd', 'StockReturnController@stockadd');
+Route::post('stockedit', 'StockReturnController@stockedit');
+Route::post('stockdelete', 'StockReturnController@stockdelete');
 
 
 Route::get('example', 'ExampleController@display');
