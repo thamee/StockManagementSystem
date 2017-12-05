@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\stock_in;
+use App\stock;
 use Validator;
 use Response;
 use Illuminate\Support\Facades\Input;
@@ -30,14 +31,19 @@ class StockinController extends Controller
             ));
         } else {
             $data = new stock_in();
+            $st = new stock();
             $data->order_no = $request->order_no;
             $data->sup_id = $request->sup_id;
             $data->order_date = $request->order_date;
             $data->stock_no = $request->stock_no;
+            $st->stock_no = $request->stock_no;
+            $st->stock_amount = $request->stock_amount;
+
             $data->stock_name = $request->stock_name;
             $data->stock_unit = $request->stock_unit;
             $data->stock_amount = $request->stock_amount;
             $data->save();
+            $st->save();
 
             return response()->json($data);
         }
