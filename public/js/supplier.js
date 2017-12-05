@@ -1,4 +1,4 @@
-﻿$(document).ready(function() {
+$(document).ready(function() {
     $(document).on('click', '.edit-modal', function() {
         $('#footer_action_button').text("Update");
         $('#footer_action_button').addClass('glyphicon-check');
@@ -10,10 +10,11 @@
         $('.deleteContent').hide();
         $('.form-horizontal').show();
         $('#fid').val($(this).data('id'));
-        $('#n').val($(this).data('pro_name'));
-        $('#cid').val($(this).data('pro_cat'));
-        $('#gid').val($(this).data('pro_img'));
-        $('#uid').val($(this).data('unit'));
+        $('#n').val($(this).data('sup_id'));
+        $('#cid').val($(this).data('sup_name'));
+        $('#gid').val($(this).data('address'));
+        $('#uid').val($(this).data('contact_no'));
+        $('#pid').val($(this).data('email'));
         $('#myModal').modal('show');
     });
 
@@ -31,10 +32,11 @@
         $('.deleteContent').hide();
         $('.form-horizontal').show();
         $('#fid').val($(this).data('id'));
-        $('#n').val($(this).data('pro_name'));
-        $('#cid').val($(this).data('pro_cat'));
-        $('#gid').val($(this).data('pro_img'));
-        $('#uid').val($(this).data('unit'));
+        $('#n').val($(this).data('sup_id'));
+        $('#cid').val($(this).data('sup_name'));
+        $('#gid').val($(this).data('address'));
+        $('#uid').val($(this).data('contact_no'));
+        $('#pid').val($(this).data('email'));
         $('#myModal').modal('show');
     });
     $(document).on('click', '.delete-modal', function() {
@@ -60,13 +62,14 @@
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $("#fid").val(),
-                'pro_name': $('#n').val(),
-                'pro_cat': $('#cid').val(),
-                'pro_img': $('#gid').val(),
-                'unit': $('#uid').val()
+                'sup_id': $('#n').val(),
+                'sup_name': $('#cid').val(),
+                'address': $('#gid').val(),
+                'contact_no': $('#uid').val(),
+                'email': $('#pid').val(),
             },
             success: function(data) {
-                $('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.pro_name +"</td><td>" + data.pro_cat +"</td><td>" + data.pro_img + "</td><td>" + data.unit + "</td><td><button class='edit-modal btn btn-info' data-id='" + data.id + "' data-pro_name='" + data.pro_name +"' data-pro_cat='" + data.pro_cat + "' data-pro_img='" + data.pro_img +"' data-unit='" + data.unit +"'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-pro_name='" + data.pro_name +"' data-pro_cat='" + data.pro_img +"' data-pro_img='" + data.pro_cat +"' data-unit='" + data.unit +    "' ><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
+                $('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.sup_id +"</td><td>" + data.sup_name +"</td><td>" + data.address + "</td><td>" + data.contact_no + "</td><td>" + data.email +"</td><td><button class='edit-modal btn btn-info' data-id='" + data.id + "' data-sup_id='" + data.sup_id +"' data-sup_name='" + data.sup_name + "' data-address='" + data.address +"' data-contact_no='" + data.contact_no +"'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-sup_id='" + data.sup_id +"' data-sup_name='" + data.sup_name +"' data-address='" + data.address +"' data-contact_no='" + data.contact_no +    "' ><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
             }
         });
     });
@@ -81,30 +84,33 @@
             url: '/addItem',
             data: {
                 '_token': $('input[name=_token]').val(),
-                'pro_name': $('input[name=pro_name]').val(),
-                'pro_cat': $('input[name=pro_cat]').val(),
-                'pro_img': $('input[name=pro_img]').val(),
-                'unit': $('input[name=unit]').val()
+                'sup_id': $('input[name=sup_id]').val(),
+                'sup_name': $('input[name=sup_name]').val(),
+                'address': $('input[name=address]').val(),
+                'contact_no': $('input[name=contact_no]').val(),
+                'email': $('input[name=email]').val()
             },
             success: function(data) {
                 if ((data.errors)){
                     $('.error').removeClass('hidden');
-                    $('.error').text(data.errors.pro_name);
-                    $('.error').text(data.errors.pro_cat);
-                    $('.error').text(data.errors.pro_img);
-                    $('.error').text(data.errors.unit);
+                    $('.error').text(data.errors.sup_id);
+                    $('.error').text(data.errors.sup_name);
+                    $('.error').text(data.errors.address);
+                    $('.error').text(data.errors.contact_no);
+                    $('.error').text(data.errors.email);
                 }
                 else {
                     $('.error').addClass('hidden');
-                    $('#table').append("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.pro_name +"</td><td>" + data.pro_cat +"</td><td>" + data.pro_img + "</td><td>" + data.unit +"</td><td><button class='edit-modal btn btn-info' data-id='" + data.id + "' data-pro_name='" + data.pro_name +"' data-pro_cat='" + data.pro_cat + "' data-pro_img='" + data.pro_img +"' data-unit='" + data.unit +"'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-pro_name='" + data.pro_name + "' data-pro_cat='" + data.pro_cat + "' data-pro_img='" + data.pro_img +"' data-unit='" + data.unit +"'><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
+                    $('#table').append("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.sup_id +"</td><td>" + data.sup_name +"</td><td>" + data.address + "</td><td>" + data.contact_no +"</td><td>" + data.email +"</td><td><button class='edit-modal btn btn-info' data-id='" + data.id + "' data-sup_id='" + data.sup_id +"' data-sup_name='" + data.sup_name + "' data-address='" + data.address +"' data-contact_no='" + data.contact_no +"' data-email='" + data.email +"'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-id='" + data.id + "' data-sup_id='" + data.sup_id + "' data-sup_name='" + data.sup_name + "' data-address='" + data.address +"' data-contact_no='" + data.contact_no +"' data-email='" + data.email +"'><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
                 }
             },
 
         });
-        $('#pro_name').val('');
-        $('#pro_cat').val('');
-        $('#pro_img').val('');
-        $('#unit').val('');
+        $('#sup_id').val('');
+        $('#sup_name').val('');
+        $('#address').val('');
+        $('#contact_no').val('');
+        $('#email').val('');
     });
     $('.modal-footer').on('click', '.delete', function() {
         $.ajax({

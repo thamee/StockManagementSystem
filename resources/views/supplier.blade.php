@@ -35,25 +35,27 @@
             <thead>
             <tr>
                 <th class="text-center">#</th>
-                <th class="text-center">Product Name</th>
-                <th class="text-center">Product category</th>
-                <th class="text-center">Product image</th>
-                <th class="text-center">Product unit</th>
+                <th class="text-center">Supplier ID</th>
+                <th class="text-center">Supplier Name</th>
+                <th class="text-center">Address</th>
+                <th class="text-center">Contact No</th>
+                <th class="text-center">Email</th>
             </tr>
             </thead>
             @foreach($data as $item)
                 <tr class="item{{$item->id}}">
                     <td>{{$item->id}}</td>
-                    <td>{{$item->pro_name}}</td>
-                    <td>{{$item->pro_cat}}</td>
-                    <td>{{$item->pro_img}}</td>
-                    <td>{{$item->unit}}</td>
+                    <td>{{$item->sup_id}}</td>
+                    <td>{{$item->sup_name}}</td>
+                    <td>{{$item->address}}</td>
+                    <td>{{$item->contact_no}}</td>
+                    <td>{{$item->email}}</td>
                     <td><button class="edit-modal btn btn-info" data-id="{{$item->id}}"
-                                data-pro_name="{{$item->pro_name}}"  data-pro_cat="{{$item->pro_cat}}"  data-pro_img="{{$item->pro_img}}"  data-unit="{{$item->unit}}">
+                                data-sup_id="{{$item->sup_id}}"  data-sup_name="{{$item->sup_name}}"  data-address="{{$item->address}}"  data-contact_no="{{$item->contact_no}}">
                             <span class="glyphicon glyphicon-edit"></span> Edit
                         </button>
                         <button class="delete-modal btn btn-danger"
-                                data-id="{{$item->id}}" data-name="{{$item->pro_name}}">
+                                data-id="{{$item->id}}" data-name="{{$item->sup_id}}">
                             <span class="glyphicon glyphicon-trash"></span> Delete
                         </button></td>
                 </tr>
@@ -78,27 +80,33 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="pro_name">Product Name:</label>
+                        <label class="control-label col-sm-2" for="sup_id">Supplier Id:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="n">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="pro_cat">Product Category:</label>
+                        <label class="control-label col-sm-2" for="sup_name">Supplier Name:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="cid">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="pro_img">Product Image:</label>
+                        <label class="control-label col-sm-2" for="address">Address:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="gid" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="unit">Product Unit</label>
+                        <label class="control-label col-sm-2" for="contact_no">Contact No:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="uid">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Email:</label>
+                        <div class="col-sm-10">
+                            <input type="name" class="form-control" id="pid">
                         </div>
                     </div>
                 </form>
@@ -123,41 +131,50 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h3 class="modal-tit" id="myModalLabel">Product</h3>
+                <h3 class="modal-tit" id="myModalLabel">Supplier</h3>
             </div>
             <div class="modal-body">
                 <form id="frmProducts" name="frmProducts" class="form-horizontal" novalidate="">
                     <div class="form-group row add">
-                        <label class="control-label col-sm-2" >Product Name:</label>
+                        <label class="control-label col-sm-2" >Supplier ID:</label>
                         <div class="col-sm-10">
 
-                            <input type="text" class="form-control" id="pro_name" name="pro_name"
-                                   placeholder="Enter some name" required>
+                            <input type="text" class="form-control" id="sup_id" name="sup_id"
+                                   placeholder="Enter supplier id" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
                     <div class="form-group row add">
-                        <label class="control-label col-sm-2" >Product Category:</label>
+                        <label class="control-label col-sm-2" >Supplier Name:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="pro_cat" name="pro_cat"
-                                   placeholder="Enter some name" required>
+                            <input type="text" class="form-control" id="sup_name" name="sup_name"
+                                   placeholder="Enter supplier name" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
                     <div class="form-group row add">
-                        <label class="control-label col-sm-2" >Product Image</label>
+                        <label class="control-label col-sm-2" >Address:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="pro_img" name="pro_img"
-                                   placeholder="Enter some name" required>
+                            <input type="text" class="form-control" id="address" name="address"
+                                   placeholder="Enter address" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
 
                     <div class="form-group row add">
-                        <label class="control-label col-sm-2" >Product Unit:</label>
+                        <label class="control-label col-sm-2" >Contact No:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="unit" name="unit"
-                                   placeholder="Enter some name" required>
+                            <input type="text" class="form-control" id="contact_no" name="contact_no"
+                                   placeholder="Enter contact number" required>
+                            <p class="error text-center alert alert-danger hidden"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group row add">
+                        <label class="control-label col-sm-2" >Email:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="email" name="email"
+                                   placeholder="Enter email" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
@@ -180,7 +197,7 @@
 
 
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('js/supplier.js') }}"></script>
 </body>
 </html>
 
