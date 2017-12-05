@@ -28,6 +28,7 @@
 </nav>
 <br><br><br><br>
 <div class="container">
+    <h3>Wastage table</h3>
     <button id="btn_add" name="btn_add" class="btn btn-default pull-right">Add New Product</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">
@@ -37,11 +38,9 @@
                 <th class="text-center">#</th>
                 <th class="text-center">Stock No</th>
                 <th class="text-center">Stock Name</th>
-                <th class="text-center">Supplier ID</th>
-                <th class="text-center">Supplier Name</th>
-                <th class="text-center">Received Date</th>
-                <th class="text-center">Return Date</th>
-                <th class="text-center">Stock Amount</th>
+                <th class="text-center">Stock Unit</th>
+                <th class="text-center">Amount_of_wastage</th>
+
             </tr>
             </thead>
             @foreach($data as $item)
@@ -49,13 +48,10 @@
                     <td>{{$item->id}}</td>
                     <td>{{$item->stock_no}}</td>
                     <td>{{$item->stock_name}}</td>
-                    <td>{{$item->sup_id}}</td>
-                    <td>{{$item->sup_name}}</td>
-                    <td>{{$item->received_date}}</td>
-                    <td>{{$item->return_date}}</td>
-                    <td>{{$item->stock_amount}}</td>
+                    <td>{{$item->stock_unit}}</td>
+                    <td>{{$item->sup_amount_of_wastage}}</td>
                     <td><button class="edit-modal btn btn-info" data-id="{{$item->id}}"
-                                data-stock_no="{{$item->stock_no}}"  data-stock_name="{{$item->stock_name}}"  data-sup_id="{{$item->sup_id}}" data-received_date="{{$item->received_date}}"  data-return_date="{{$item->return_date}}" data-stock_amount="{{$item->stock_amount}}">
+                                data-stock_no="{{$item->stock_no}}"  data-stock_name="{{$item->stock_name}}"  data-stock_unit="{{$item->stock_unit}}" data-sup_amount_of_wastage="{{$item->sup_amount_of_wastage}}">
                             <span class="glyphicon glyphicon-edit"></span> Edit
                         </button>
                         <button class="delete-modal btn btn-danger"
@@ -96,35 +92,18 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="address">Supplier ID:</label>
+                        <label class="control-label col-sm-2" for="address">Stock unit:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="gid" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="contact_no">Supplier Name:</label>
+                        <label class="control-label col-sm-2" for="contact_no">Amount of wastage:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="uid">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Received date:</label>
-                        <div class="col-sm-10">
-                            <input type="name" class="form-control" id="pid">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Return date:</label>
-                        <div class="col-sm-10">
-                            <input type="name" class="form-control" id="lid">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Stock Amount:</label>
-                        <div class="col-sm-10">
-                            <input type="name" class="form-control" id="mid">
-                        </div>
-                    </div>
+
                 </form>
                 <div class="deleteContent">
                     Are you Sure you want to delete <span class="dname"></span> ? <span
@@ -147,7 +126,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                <h3 class="modal-tit" id="myModalLabel">StockReturn</h3>
+                <h3 class="modal-tit" id="myModalLabel">Wastage</h3>
             </div>
             <div class="modal-body">
                 <form id="frmProducts" name="frmProducts" class="form-horizontal" novalidate="">
@@ -169,49 +148,28 @@
                         </div>
                     </div>
                     <div class="form-group row add">
-                        <label class="control-label col-sm-2" >Supplier ID:</label>
+                        <label class="control-label col-sm-2" >Stock Unit:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="sup_id" name="sup_id"
-                                   placeholder="Enter supplier id" required>
+                            <input type="text" class="form-control" id="stock_unit" name="stock_unit"
+                                   placeholder="Enter stock unit" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
 
                     <div class="form-group row add">
-                        <label class="control-label col-sm-2" >Supplier Name:</label>
+                        <label class="control-label col-sm-2" >Amount of wastage:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="sup_name" name="sup_name"
-                                   placeholder="Enter supplier name" required>
+                            <input type="text" class="form-control" id="amount_of_wastage" name="amount_of_wastage"
+                                   placeholder="Enter amount" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
 
-                    <div class="form-group row add">
-                        <label class="control-label col-sm-2" >Received date:</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="received_date" name="received_date"
-                                   placeholder="Enter received date" required>
-                            <p class="error text-center alert alert-danger hidden"></p>
-                        </div>
-                    </div>
 
-                    <div class="form-group row add">
-                        <label class="control-label col-sm-2" >Return date:</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="return_date" name="return_date"
-                                   placeholder="Enter return date" required>
-                            <p class="error text-center alert alert-danger hidden"></p>
-                        </div>
-                    </div>
 
-                    <div class="form-group row add">
-                        <label class="control-label col-sm-2" >Stock Amount:</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="stock_amount" name="stock_amount"
-                                   placeholder="Enter stock amount" required>
-                            <p class="error text-center alert alert-danger hidden"></p>
-                        </div>
-                    </div>
+
+
+
 
                 </form>
             </div>
@@ -231,7 +189,7 @@
 
 
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/stockreturn.js') }}"></script>
+<script src="{{ asset('js/wastage.js') }}"></script>
 </body>
 </html>
 

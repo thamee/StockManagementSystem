@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/ho', function () {
+Route::get('/home', function () {
     return view('home/home');
 });
 //
@@ -33,6 +33,12 @@ Route::get('/stockreturn', 'StockReturnController@readItems');
 Route::post('stockadd', 'StockReturnController@stockadd');
 Route::post('stockedit', 'StockReturnController@stockedit');
 Route::post('stockdelete', 'StockReturnController@stockdelete');
+
+
+Route::get('/wastage', 'WastageController@readItems');
+Route::post('wasadd', 'WastageController@wasadd');
+Route::post('wasedit', 'WastageController@wasedit');
+Route::post('wasdelete', 'WastageController@wasdelete');
 
 
 Route::get('example', 'ExampleController@display');
