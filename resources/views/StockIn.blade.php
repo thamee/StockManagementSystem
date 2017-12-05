@@ -30,18 +30,20 @@
 <br><br><br><br>
 <div class="container">
     <h3>STOCK IN TABLE</h3>
-    <button id="btn_add" name="btn_add" class="btn btn-default pull-right">Add New Product</button>
+    <button id="btn_add" name="btn_add" class="btn btn-default pull-right">Add New Stock</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">
         <table class="table table-borderless" id="table">
             <thead>
             <tr>
                 <th class="text-center">#</th>
-                <th class="text-center">Supplier ID</th>
-                <th class="text-center">Supplier Name</th>
-                <th class="text-center">Address</th>
-                <th class="text-center">Contact No</th>
-                <th class="text-center">Email</th>
+                <th class="text-center">Order Number</th>
+                <th class="text-center">Supplier Id</th>
+                <th class="text-center">Order Date</th>
+                <th class="text-center">Stock Number </th>
+                <th class="text-center">Stock Name </th>
+                <th class="text-center">Stock unit </th>
+                <th class="text-center">Stock Amount</th>
             </tr>
             </thead>
             @foreach($data as $item)

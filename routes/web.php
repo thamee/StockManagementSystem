@@ -39,3 +39,4 @@ Route::get('example', 'ExampleController@display');
 Route::get('example/form', 'ExampleController@display');
 Route::get('/stockin', 'StockinController@stockin');
 Route::post('addStockin', 'StockinController@addStockin');
+Route::get('/stock', 'stockController@stock');
