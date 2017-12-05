@@ -23,6 +23,11 @@ Route::post('addItem', 'IndexController@addItem');
 Route::post('editItem', 'IndexController@editItem');
 Route::post('deleteItem', 'IndexController@deleteItem');
 
+Route::get('/supplier', 'SupplierController@readItems');
+Route::post('addItem', 'SupplierController@addItem');
+Route::post('editItem', 'SupplierController@editItem');
+Route::post('deleteItem', 'SupplierController@deleteItem');
+
 
 Route::get('example', 'ExampleController@display');
 Route::get('example/form', 'ExampleController@display');
