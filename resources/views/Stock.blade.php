@@ -35,7 +35,7 @@
 
     {{ csrf_field() }}
     <div class="table-responsive text-center">
-        <table class="table table-borderless" id="stock">
+        <table class="table table-borderless" id="table">
             <thead>
             <tr>
                 <th class="text-center">#</th>
