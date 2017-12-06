@@ -69,15 +69,15 @@ button {
 .button1 {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
 #table {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
-.button2:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 
 #table td, #table th {
     border: 1px solid #001f3f;
@@ -107,4 +107,34 @@ h3 {
     font-style:oblique;
     font-size:200%;
 
+}
+
+#stock {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+#stock td, #table th {
+    border: 1px solid #001f3f;
+    padding: 8px;
+}
+
+#stock tr:nth-child(even){background-color: #f2f2f2;}
+
+#stock tr:hover {background-color: #ddd;}
+
+#stock th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    text-emphasis-color: #0D0A0A;
+    background-color: #001f3f;
+    color: white;
+}
+#stock-scroll {
+    height:350px;
+    overflow:auto;
+    margin-top:20px;
 }
