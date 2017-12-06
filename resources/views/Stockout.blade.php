@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Stock management System-Stock in table</title>
+    <title>Stock management System-Stock out table</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -32,7 +32,7 @@
 <br>
 <div class="container">
     <h3>STOCK OUT TABLE</h3><br>
-    <button id="btn_add" name="btn_add" class="button button2 pull-right" >Add New Stock</button>
+    <button id="btn_add" name="btn_add" class="button button2 pull-right" >get the Stock</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">
         <div id="table-scroll">

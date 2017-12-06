@@ -40,6 +40,18 @@ class StockoutController extends Controller
 //            $data->stock_unit = $request->stock_unit;
 //            $data->stock_amount = $request->stock_amount;
             $data->save();
+            $stockNo= stock::all();
+
+            foreach ($stockNo as $st) {
+                if ($st->stock_no == $data->stock_no) {
+                    if($st->stock_amount>$data->stock_amount) {
+                        $st->stock_amount = ($st->stock_amount - $data->stock_amount);
+//                    $st->stock_amount = $request->stock_amount;
+                        $st->save();
+                    }
+
+                }
+            }
 
 
             return response()->json($data);
