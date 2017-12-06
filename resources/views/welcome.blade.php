@@ -7,20 +7,7 @@
                 <div class="panel panel-success">
                     <div class="panel-heading">List of Game of Thrones Characters</div>
 
-                @if(Auth::check())
-                    <!-- Table -->
-                        <table class="table">
-                            <tr>
-                                <th>Character</th>
-                                <th>Real Name</th>
-                            </tr>
-                            @foreach($characters as $key => $value)
-                                <tr>
-                                    <td></td><td></td>
-                                </tr>
-                            @endforeach
-                        </table>
-                    @endif
+
 
 
                 </div>
