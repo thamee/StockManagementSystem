@@ -1,29 +1,17 @@
-@extends('layouts.app')
+{{--<style>--}}
+{{--.modal-content {--}}
+{{--padding: 100px;--}}
+{{--}--}}
+{{--</style>style--}}
+        <!doctype html>
+<html lang="{{ config('app.locale') }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-success">
-                    <div class="panel-heading">List of Game of Thrones Characters</div>
+    <title>Ajax CRUD in laravel - justlaravel.com</title>
 
-                @if(Auth::check())
-                    <!-- Table -->
-                        <table class="table">
-                            <tr>
-                                <th>Character</th>
-                                <th>Real Name</th>
-                            </tr>
-                            @foreach($characters as $key => $value)
-                                <tr>
-                                    <td></td><td></td>
-                                </tr>
-                            @endforeach
-                        </table>
-                    @endif
-
-
-<<<<<<< HEAD
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -33,18 +21,16 @@
 </head>
 <body>
 
-<div class="topnav" id="myTopnav">
-    <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-    <a href="#about" class="pull-right" >Logout</a>
-    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-</div>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <ul class="nav navbar-nav">
+        <li><a href="http://justlaravel.com/">justlaravel.com</a></li>
+        <li><a href="http://justlaravel.com/demos/">Demos home</a></li>
+    </ul>
+</nav>
 <br><br><br><br>
 <div class="container">
     <h3> PRODUCT DETAILS</h3>
-    <button id="btn_add" name="btn_add" class="button button2 pull-right" >Add New Stock</button>
+    <button id="btn_add" name="btn_add" class="btn btn-default pull-right">Add New Product</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">
         <table class="table table-borderless" id="table">
@@ -129,13 +115,74 @@
                     <button type="button" class="btn btn-warning" data-dismiss="modal">
                         <span class='glyphicon glyphicon-remove'></span> Close
                     </button>
-=======
->>>>>>> b4dd2ac4fcce2d0f4fb357f6da8a5f899109ad1f
                 </div>
-                @if(Auth::guest())
-                    <a href="/login" class="btn btn-info"> You need to login to see the list 😜😜 >></a>
-                @endif
             </div>
         </div>
     </div>
-@endsection
+</div>
+<div class="modal fade" id="bt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h3 class="modal-tit" id="myModalLabel">Product</h3>
+            </div>
+            <div class="modal-body">
+                <form id="frmProducts" name="frmProducts" class="form-horizontal" novalidate="">
+                    <div class="form-group row add">
+                        <label class="control-label col-sm-2" >Product Name:</label>
+                        <div class="col-sm-10">
+
+                            <input type="text" class="form-control" id="pro_name" name="pro_name"
+                                   placeholder="Enter some name" required>
+                            <p class="error text-center alert alert-danger hidden"></p>
+                        </div>
+                    </div>
+                    <div class="form-group row add">
+                        <label class="control-label col-sm-2" >Product Category:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="pro_cat" name="pro_cat"
+                                   placeholder="Enter some name" required>
+                            <p class="error text-center alert alert-danger hidden"></p>
+                        </div>
+                    </div>
+                    <div class="form-group row add">
+                        <label class="control-label col-sm-2" >Product Image</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="pro_img" name="pro_img"
+                                   placeholder="Enter some name" required>
+                            <p class="error text-center alert alert-danger hidden"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group row add">
+                        <label class="control-label col-sm-2" >Product Unit:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="unit" name="unit"
+                                   placeholder="Enter some name" required>
+                            <p class="error text-center alert alert-danger hidden"></p>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="add" value="add">Save changes</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
+</body>
+</html>
+

@@ -38,7 +38,7 @@ class IndexController extends Controller
     {
         $data = data::all();
 
-        return view('welcome')->withData($data);
+        return view('ReadStock')->withData($data);
     }
     public function editItem(Request $req)
     {

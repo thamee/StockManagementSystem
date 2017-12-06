@@ -10,15 +10,28 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 Route::get('/home', function () {
     return view('home/home');
 });
-//
-//
-//<?php
+Route::get('/', 'ListController@show');
+Route::get('/logout',function() {
+    Auth::logout();
+return redirect('/login');});
+Route::auth();
+Route::get('/home','HomeController@index');
 
-Route::get('/', 'IndexController@readItems');
+Route::get('/got', [
+    'middleware' => ['auth'],
+    'uses' => function () {
+        echo "You are allowed to view this page!";
+    }]);
+
+
+
+Route::get('/read', 'IndexController@readItems');
 Route::post('addItem', 'IndexController@addItem');
 Route::post('editItem', 'IndexController@editItem');
 Route::post('deleteItem', 'IndexController@deleteItem');
@@ -46,3 +59,11 @@ Route::get('example/form', 'ExampleController@display');
 Route::get('/stockin', 'StockinController@stockin');
 Route::post('addStockin', 'StockinController@addStockin');
 Route::get('/stock', 'stockController@stock');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
