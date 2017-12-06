@@ -77,7 +77,7 @@
                 <h3 class="modal-tit" id="myModalLabel">StockOut</h3>
             </div>
             <div class="modal-body">
-                <form id="frmProducts" name="frmProducts" class="form-horizontal" novalidate="">
+                <form id="frmProducts" name="frmProducts" class="form-horizontal" required>
                     <div class="form-group row add">
                         <label class="control-label col-sm-2" > Stock No:</label>
                         <div class="col-sm-10">
@@ -98,7 +98,7 @@
                     <div class="form-group row add">
                         <label class="control-label col-sm-2" >Date:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="date" name="date"
+                            <input type="date" class="form-control" id="date" name="date"
                                    placeholder="Enter date" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
