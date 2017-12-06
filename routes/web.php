@@ -60,6 +60,10 @@ Route::get('/stockin', 'StockinController@stockin');
 Route::post('addStockin', 'StockinController@addStockin');
 Route::get('/stock', 'stockController@stock');
 
+Route::get('/stockout', 'StockoutController@stockout');
+Route::post('addStockout', 'StockoutController@addStockout');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

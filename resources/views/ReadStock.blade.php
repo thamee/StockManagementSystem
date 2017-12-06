@@ -21,15 +21,17 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <ul class="nav navbar-nav">
-        <li><a href="http://justlaravel.com/">justlaravel.com</a></li>
-        <li><a href="http://justlaravel.com/demos/">Demos home</a></li>
-    </ul>
-</nav>
-<br><br><br><br>
+<div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#about" class="pull-right" >Logout</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+<br>
 <div class="container">
-    <h3> PRODUCT DETAILS</h3>
+    <h3> PRODUCT DETAILS</h3><br>
     <button id="btn_add" name="btn_add" class="btn btn-default pull-right">Add New Product</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">

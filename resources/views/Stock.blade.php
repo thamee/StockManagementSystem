@@ -29,9 +29,9 @@
     <a href="#about" class="pull-right" >Logout</a>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
-<br><br><br><br>
+<br>
 <div class="container">
-    <h3>STOCK TABLE</h3>
+    <h3>STOCK TABLE</h3><br>
 
     {{ csrf_field() }}
     <div class="table-responsive text-center">

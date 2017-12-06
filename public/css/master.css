@@ -96,6 +96,11 @@ button {
     background-color: #001f3f;
     color: white;
 }
+#table-scroll {
+    height:350px;
+    overflow:auto;
+    margin-top:20px;
+}
 h3 {
     color: #111111;
     font-family: Calibri;

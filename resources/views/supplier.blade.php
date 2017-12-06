@@ -28,7 +28,7 @@
     <a href="#about" class="pull-right" >Logout</a>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
-<br><br><br><br>
+<br>
 <div class="container">
     <h3>SUPPLIER TABLE</h3><br>
     <button id="btn_add" name="btn_add" class="button button2 pull-right" >Add New Stock</button>
