@@ -14,6 +14,11 @@ $(document).ready(function() {
                 'stock_unit': $('input[name=stock_unit]').val(),
                 'stock_amount': $('input[name=stock_amount]').val()
             },
+            tag: {
+                '_token': $('input[name=_token]').val(),
+                'stock_no': $('input[name=stock_no]').val(),
+                'stock_amount': $('input[name=stock_amount]').val()
+            },
             success: function(data) {
                 if ((data.errors)){
                     $('.error').removeClass('hidden');
@@ -24,6 +29,7 @@ $(document).ready(function() {
                     $('.error').text(data.errors.stock_name);
                     $('.error').text(data.errors.stock_unit);
                     $('.error').text(data.errors.stock_amount);
+
                 }
                 else {
                     $('.error').addClass('hidden');
@@ -38,6 +44,31 @@ $(document).ready(function() {
 
     }
             },
+
+
+
+            success: function(tag) {
+                if ((tag.errors)){
+                    $('.error').removeClass('hidden');
+
+                    $('.error').text(tag.errors.stock_no);
+                    $('.error').text(tag.errors.stock_amount);
+
+                }
+                else {
+                    $('.error').addClass('hidden');
+
+                    $('#stock').append("<tr class='item" + tag.id + "'><td>" + tag.id + "</td><td>" + tag.stock_no +"</td><td>" + tag.stock_amount +"</tr>");
+
+
+
+
+
+
+
+                }
+            },
+
 
         });
         $('#order_no').val('');
