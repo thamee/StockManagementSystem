@@ -14,11 +14,11 @@ $(document).ready(function() {
                 'stock_unit': $('input[name=stock_unit]').val(),
                 'stock_amount': $('input[name=stock_amount]').val()
             },
-            tag: {
-                '_token': $('input[name=_token]').val(),
-                'stock_no': $('input[name=stock_no]').val(),
-                'stock_amount': $('input[name=stock_amount]').val()
-            },
+            // tag: {
+            //     '_token': $('input[name=_token]').val(),
+            //     'stock_no': $('input[name=stock_no]').val(),
+            //     'stock_amount': $('input[name=stock_amount]').val()
+            // },
             success: function(data) {
                 if ((data.errors)){
                     $('.error').removeClass('hidden');
@@ -33,43 +33,25 @@ $(document).ready(function() {
                 }
                 else {
                     $('.error').addClass('hidden');
-
-                    $('#table').append("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.order_no +"</td><td>" + data.sup_id +"</td><td>" + data.order_date + "</td><td>" + data.stock_no +"</td><td>" + data.stock_name +"</td><td>" + data.stock_unit +"</td><td>" + data.stock_amount +"</tr>");
-
-
-
-
-
-
-
-    }
-            },
-
-
-
-            success: function(tag) {
-                if ((tag.errors)){
-                    $('.error').removeClass('hidden');
-
-                    $('.error').text(tag.errors.stock_no);
-                    $('.error').text(tag.errors.stock_amount);
-
-                }
-                else {
-                    $('.error').addClass('hidden');
-
-                    $('#stock').append("<tr class='item" + tag.id + "'><td>" + tag.id + "</td><td>" + tag.stock_no +"</td><td>" + tag.stock_amount +"</tr>");
-
-
-
-
-
-
+                    $('#table').append("<tr class='item" + data.id + "'><td>" + data.id + "</td><td>" + data.order_no +"</td><td>" + data.sup_id +"</td><td>" + data.order_date + "</td><td>" + data.stock_no +"</td><td>" + data.stock_name +"</td><td>" + data.stock_unit +"</td><td>" + data.stock_amount +"</td></tr>");
 
                 }
             },
 
-
+            // success: function(tag) {
+            //     if ((tag.errors)){
+            //         $('.error').removeClass('hidden');
+            //         $('.error').text(tag.errors.stock_no);
+            //         $('.error').text(tag.errors.stock_amount);
+            //
+            //     }
+            //     else {
+            //         $('.error').addClass('hidden');
+            //
+            //         // $('#stock').append("<tr class='item" + tag.id + "'><td>" + tag.id + "</td><td>" + tag.stock_no +"</td><td>" + tag.stock_amount +"</td></tr>");
+            //
+            //     }
+            // },
         });
         $('#order_no').val('');
         $('#sup_id').val('');
@@ -94,8 +76,5 @@ $(document).ready(function() {
             x.className = "topnav";
         }
     }
-
-
-
 
 });
