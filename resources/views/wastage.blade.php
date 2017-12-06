@@ -20,16 +20,18 @@
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-    <ul class="nav navbar-nav">
-        <li><a href="http://justlaravel.com/">justlaravel.com</a></li>
-        <li><a href="http://justlaravel.com/demos/">Demos home</a></li>
-    </ul>
-</nav>
+<div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#about" class="pull-right" >Logout</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
 <br><br><br><br>
 <div class="container">
-    <h3>Wastage table</h3>
-    <button id="btn_add" name="btn_add" class="btn btn-default pull-right">Add New Product</button>
+    <h3>WASTAGE TABLE</h3>
+    <button id="btn_add" name="btn_add" class="button button2 pull-right" >Add New Stock</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">
         <table class="table table-borderless" id="table">

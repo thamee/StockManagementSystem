@@ -32,7 +32,7 @@
 <br>
 <div class="container">
     <h3>STOCK IN TABLE</h3><br>
-    <button id="btn_add" name="btn_add" class="button button1- pull-right" >Add New Stock</button>
+    <button id="btn_add" name="btn_add" class="button button2 pull-right" >Add New Stock</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">
         <table class="table table-borderless" id="table">
