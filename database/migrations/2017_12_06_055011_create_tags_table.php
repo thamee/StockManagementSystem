@@ -16,7 +16,7 @@ class CreateTagsTable extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
             $table->string('stock_no');
-            $table->string('stock_amount');
+            $table->decimal('stock_amount');
             $table->timestamps();
         });
     }

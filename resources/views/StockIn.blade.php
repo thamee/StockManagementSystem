@@ -131,7 +131,7 @@
                     <div class="form-group row add">
                         <label class="control-label col-sm-2" >Stock Amount:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="stock_amount" name="stock_amount"
+                            <input type="number" class="form-control" id="stock_amount" name="stock_amount"
                                    placeholder="Enter email" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
