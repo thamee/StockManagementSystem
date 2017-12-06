@@ -35,6 +35,7 @@
     <button id="btn_add" name="btn_add" class="button button2 pull-right" >Add New Stock</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">
+        <div id="table-scroll">
         <table class="table table-borderless" id="table">
             <thead>
             <tr>
@@ -63,6 +64,7 @@
                 </tr>
             @endforeach
         </table>
+        </div>
     </div>
 </div>
 

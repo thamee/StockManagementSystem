@@ -29,7 +29,7 @@ Route::get('/got', [
         echo "You are allowed to view this page!";
     }]);
 
-
+Route::get('/homepage','HomePageController@display');
 
 Route::get('/read', 'IndexController@readItems');
 Route::post('addItem', 'IndexController@addItem');

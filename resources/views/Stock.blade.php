@@ -35,6 +35,7 @@
 
     {{ csrf_field() }}
     <div class="table-responsive text-center">
+        <div id="table-scroll">
         <table class="table table-borderless" id="table">
             <thead>
             <tr>
@@ -61,6 +62,7 @@
                 </tr>
             @endforeach
         </table>
+        </div>
     </div>
 </div>
 
