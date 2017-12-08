@@ -127,8 +127,13 @@
                     <div class="form-group row add">
                         <label class="control-label col-sm-2" >stock unit:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="stock_unit" name="stock_unit"
+                            <input type="text" class="form-control" list="unit" id="stock_unit" name="stock_unit"
                                    placeholder="Enter contact number" required>
+                            <datalist id="unit">
+                                <option value="small"/>
+                                <option value="medium"/>
+                                <option value="large"/>
+                            </datalist>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
