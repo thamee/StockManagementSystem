@@ -6,6 +6,7 @@
         <!doctype html>
 <html lang="{{ config('app.locale') }}">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,20 +19,21 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
+
 </head>
 <body>
 <div class="topnav" id="myTopnav">
-    <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a href="{{URL::to('homepage')}}" class="">Home</a>
+    <a href="{{URL::to('stockreturn')}}" class="active">Stock Return</a>
+    {{--<a href="{{URL::to('stockin')}}" class="active">Add Stock</a>--}}
+    {{--<a href="{{URL::to('stockout')}}">Stock Out</a>--}}
     <a href="#about" class="pull-right" >Logout</a>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 <br>
 <div class="container">
     <h3> STOCK RETURN TABLE</h3><br>
-    <button id="btn_add" name="btn_add" class="button button2  pull-right" >Add New Stock</button>
+    <button id="btn_add" name="btn_add" class="btn btn  pull-right" >Add return Stock</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">
         <div id="table-scroll">
@@ -89,43 +91,43 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="sup_id">Stock No:</label>
+                        <label class="control-label col-sm-2" for="stock_no">Stock No:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="n">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="sup_name">Stock Name:</label>
+                        <label class="control-label col-sm-2" for="stock_name">Stock Name:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="cid">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="address">Supplier ID:</label>
+                        <label class="control-label col-sm-2" for="sup_id">Supplier ID:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="gid" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="contact_no">Supplier Name:</label>
+                        <label class="control-label col-sm-2" for="sup_name">Supplier Name:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="uid">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Received date:</label>
+                        <label class="control-label col-sm-2" for="received_date">Received date:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="pid">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Return date:</label>
+                        <label class="control-label col-sm-2" for="return_date">Return date:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="lid">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Stock Amount:</label>
+                        <label class="control-label col-sm-2" for="stock_amount">Stock Amount:</label>
                         <div class="col-sm-10">
                             <input type="name" class="form-control" id="mid">
                         </div>
@@ -212,7 +214,7 @@
                     <div class="form-group row add">
                         <label class="control-label col-sm-2" >Stock Amount:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="stock_amount" name="stock_amount"
+                            <input type="number" class="form-control" id="stock_amount" name="stock_amount"
                                    placeholder="Enter stock amount" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
@@ -231,9 +233,6 @@
 
     </div>
 </div>
-
-
-
 
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/stockreturn.js') }}"></script>

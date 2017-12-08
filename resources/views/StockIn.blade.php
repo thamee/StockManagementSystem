@@ -6,11 +6,12 @@
         <!doctype html>
 <html lang="{{ config('app.locale') }}">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Stock management System-Stock in table</title>
+    <title>Ajax CRUD in laravel - justlaravel.com</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -18,21 +19,22 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
+
 </head>
 <body>
-
 <div class="topnav" id="myTopnav">
-    <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a href="{{URL::to('homepage')}}" class="">Home</a>
+    <a href="{{URL::to('stock')}}">Stock</a>
+    <a href="{{URL::to('stockin')}}" class="active">Add Stock</a>
+    <a href="{{URL::to('stockout')}}">Stock Out</a>
+    {{--<a href="#about">About</a>--}}
     <a href="#about" class="pull-right" >Logout</a>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 <br>
 <div class="container">
     <h3>STOCK IN TABLE</h3><br>
-    <button id="btn_add" name="btn_add" class="button button2 pull-right" >Add New Stock</button>
+    <button id="btn_add" name="btn_add" class="btn btn pull-right" >Add New Stock</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">
         <div id="table-scroll">
@@ -123,7 +125,7 @@
 
 
                     <div class="form-group row add">
-                        <label class="control-label col-sm-2" >stock Name:</label>
+                        <label class="control-label col-sm-2" >stock unit:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="stock_unit" name="stock_unit"
                                    placeholder="Enter contact number" required>
@@ -135,7 +137,7 @@
                         <label class="control-label col-sm-2" >Stock Amount:</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" id="stock_amount" name="stock_amount"
-                                   placeholder="Enter email" required>
+                                   placeholder="Enter amount" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
@@ -153,7 +155,6 @@
 
     </div>
 </div>
-
 
 
 

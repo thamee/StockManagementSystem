@@ -6,11 +6,12 @@
         <!doctype html>
 <html lang="{{ config('app.locale') }}">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Stock management System-Stock out table</title>
+    <title>Ajax CRUD in laravel - justlaravel.com</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -18,21 +19,21 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
+
 </head>
 <body>
-
 <div class="topnav" id="myTopnav">
-    <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a href="{{URL::to('homepage')}}" class="">Home</a>
+    <a href="{{URL::to('stock')}}">Stock</a>
+    <a href="{{URL::to('stockin')}}" class="">Add Stock</a>
+    <a href="{{URL::to('stockout')}}" class="active">Stock Out</a>
     <a href="#about" class="pull-right" >Logout</a>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 <br>
 <div class="container">
     <h3>STOCK OUT TABLE</h3><br>
-    <button id="btn_add" name="btn_add" class="button button2 pull-right" >get the Stock</button>
+    <button id="btn_add" name="btn_add" class="btn btn-navbar pull-right" >get the Stock</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">
         <div id="table-scroll">
@@ -134,9 +135,6 @@
 
     </div>
 </div>
-
-
-
 
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/stockout.js') }}"></script>

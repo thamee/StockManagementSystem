@@ -31,10 +31,10 @@
                     <ul class="nav pull-right">
                         <li class="active"><a href="index.html">Home	</a></li>
 
-                        <li class=""><a href="">Supplier</a></li>
-                        <li class=""><a href="">Stock</a></li>
-                        <li class=""><a href="">Stock Returns</a></li>
-                        <li class=""><a href="">Wastage</a></li>
+                        <li class=""><a href={{URL::to('supplier')}}>Supplier</a></li>
+                        <li class=""><a href="{{URL::to('stock')}}">Stock</a></li>
+                        <li class=""><a href="{{URL::to('stockreturn')}}">Stock Returns</a></li>
+                        <li class=""><a href="{{URL::to('wastage')}}">Wastage</a></li>
                         <li class=""><a href="">Login</a></li>
                         {{--<li class="dropdown">--}}
                             {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<b class="caret"></b></a>--}}
