@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\stock_in;
 use App\stock;
+use App\units;
 use Validator;
 use Response;
 use Illuminate\Support\Facades\Input;
@@ -20,7 +21,7 @@ class StockinController extends Controller
             'order_date' => 'required|alpha_num',
             'stock_no' => 'required|alpha_num',
             'stock_name' => 'required|alpha_num',
-            'stock_unit' => 'required|alpha_num',
+            'stock_unit' => 'required',
             'stock_amount' => 'required|alpha_num',
         );
         $validator = Validator::make(Input::all(), $rules);
@@ -63,8 +64,11 @@ class StockinController extends Controller
     public function stockin(Request $req)
     {
         $data = stock_in::all();
+        //$unit=units::all();
 
         return view('StockIn')->withData($data);
+
+
     }
 
 

@@ -1,5 +1,9 @@
 $(document).ready(function() {
+
+
     $(document).on('click', '.edit-modal', function() {
+
+
         $('#footer_action_button').text("Update");
         $('#footer_action_button').addClass('glyphicon-check');
         $('#footer_action_button').removeClass('glyphicon-trash');
@@ -18,6 +22,7 @@ $(document).ready(function() {
         $('#lid').val($(this).data('return_date'));
         $('#mid').val($(this).data('stock_amount'));
         $('#myModal').modal('show');
+
     });
 
 
@@ -86,6 +91,7 @@ $(document).ready(function() {
     $("#add").click(function() {
 
         $.ajax({
+
             type: 'post',
             url: '/stockadd',
             data: {
@@ -94,8 +100,8 @@ $(document).ready(function() {
                 'stock_name': $('input[name=stock_name]').val(),
                 'sup_id': $('input[name=sup_id]').val(),
                 'sup_name': $('input[name=sup_name]').val(),
-                'received_date': $('input[name=received_date]').val(),
-                'return_date': $('input[name=return_date]').val(),
+                'received_date': $('input[date=received_date]').val(),
+                'return_date': $('input[date=return_date]').val(),
                 'stock_amount': $('input[name=stock_amount]').val(),
 
             },
@@ -140,6 +146,8 @@ $(document).ready(function() {
     });
 
     $('#btn_add').click(function(){
+
+
         $('#btn-save').val("add");
         $('#frmProducts').trigger("reset");
         $('#bt').modal('show');

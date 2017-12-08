@@ -63,6 +63,7 @@
 
                 </tr>
             @endforeach
+
         </table>
         </div>
     </div>
@@ -122,10 +123,10 @@
 
 
                     <div class="form-group row add">
-                        <label class="control-label col-sm-2" >Stock Unit:</label>
+                        <label class="control-label col-sm-2" >stock Name:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="stock_unit" name="stock_unit"
-                                   placeholder="Enter email" required>
+                                   placeholder="Enter contact number" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
