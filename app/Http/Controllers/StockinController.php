@@ -51,7 +51,7 @@ class StockinController extends Controller
            // $data->stock_unit = implode(',', Input::get('tsubject'));
 
             $data->stock_amount = $request->stock_amount;
-            //$data->stock_unit = implode(',', Input::get('tsubject'));
+           // $data->stock_unit = implode(',', Input::get('tsubject'));
            $data->stock_unit = $request->stock_unit;
             $data->save();
             $stockNo= stock::all();
