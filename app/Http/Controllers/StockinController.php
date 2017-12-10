@@ -78,8 +78,6 @@ class StockinController extends Controller
     public function stockin(Request $req)
     {
         $data = stock_in::all();
-        //$unit=units::all();
-
         return view('StockIn')->withData($data);
 
 
