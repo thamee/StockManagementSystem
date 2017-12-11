@@ -19,6 +19,11 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
+    <link rel="stylesheet" href="{{asset('css/styleC.css')}}">
+    <link rel="stylesheet" href="{{('assets/css/animate.css')}}">
+    <link rel="stylesheet" href="{{('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Roboto:300,400,500')}}">
+    <link rel="stylesheet" href="{{('assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{('assets/font-awesome/css/font-awesome.min.css')}}">
 
 </head>
 <body>
@@ -100,7 +105,7 @@
                     <div class="form-group row add">
                         <label class="control-label col-sm-2" >Order Date:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="order_date" name="order_date"
+                            <input type="date" class="form-control" id="order_date" name="order_date"
                                    placeholder="Enter contact number" required>
                             <p class="error text-center alert alert-danger hidden"></p>
                         </div>

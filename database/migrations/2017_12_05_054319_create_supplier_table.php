@@ -18,7 +18,7 @@ class CreateSupplierTable extends Migration
             $table->string('sup_id');
             $table->string('sup_name');
             $table->string('address');
-            $table->string('contact_no');
+            $table->integer('contact_no');
             $table->string('email');
             $table->timestamps();
         });

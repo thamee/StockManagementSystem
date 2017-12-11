@@ -18,7 +18,7 @@ class CreateWastageTable extends Migration
             $table->string('stock_no');
             $table->string('stock_name');
             $table->string('stock_unit');
-            $table->string('amount_of_wastage');
+            $table->decimal('amount_of_wastage');
             $table->timestamps();
         });
     }

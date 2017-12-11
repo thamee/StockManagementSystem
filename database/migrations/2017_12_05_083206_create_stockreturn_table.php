@@ -21,7 +21,7 @@ class CreateStockreturnTable extends Migration
             $table->string('sup_name');
             $table->string('received_date');
             $table->string('return_date');
-            $table->string('stock_amount');
+            $table->decimal('stock_amount');
             $table->timestamps();
         });
     }

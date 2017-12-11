@@ -19,21 +19,26 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/master.css') }}">
+        <link rel="stylesheet" href="{{asset('css/styleC.css')}}">
+    <link rel="stylesheet" href="{{('assets/css/animate.css')}}">
+    <link rel="stylesheet" href="{{('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Roboto:300,400,500')}}">
+    <link rel="stylesheet" href="{{('assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{('assets/font-awesome/css/font-awesome.min.css')}}">
 
 </head>
 <body>
 <div class="topnav" id="myTopnav">
     <a href="{{URL::to('homepage')}}" class="">Home</a>
-    <a href="" class="active">Supplier</a>
-    {{--<a href="#contact">Contact</a>--}}
-    {{--<a href="#about">About</a>--}}
+    <a href="{{URL::to('stock')}}">Stock</a>
+    <a href="{{URL::to('stockin')}}" class="">Add Stock</a>
+    <a href="{{URL::to('stockout')}}" class="active">Stock Out</a>
     <a href="#about" class="pull-right" >Logout</a>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
-<br>
+<br><br><br>
 <div class="container">
     <h3>SUPPLIER TABLE</h3><br>
-    <button id="btn_add" name="btn_add" class="btn btn pull-right" >Add New Stock</button>
+    <button id="btn_add" name="btn_add" class="btn button1-link-3 pull-right" >Add New Stock</button>
     {{ csrf_field() }}
     <div class="table-responsive text-center">
         <div id="table-scroll">

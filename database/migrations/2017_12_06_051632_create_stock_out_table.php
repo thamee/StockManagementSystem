@@ -18,7 +18,7 @@ class CreateStockOutTable extends Migration
             $table->string('stock_no');
             $table->string('stock_name');
             $table->string('date');
-            $table->string('stock_amount');
+            $table->decimal('stock_amount');
             $table->string('stock_unit');
 //            $table->string('stock_unit');
 //            $table->string('stock_amount');

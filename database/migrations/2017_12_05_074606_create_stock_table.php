@@ -19,7 +19,7 @@ class CreateStockTable extends Migration
             $table->string('stock_name');
             $table->string('stock_unit');
             $table->decimal('stock_amount');
-            $table->string('Min_stock_level');
+            $table->decimal('Min_stock_level');
             $table->string('part_type');
             $table->timestamps();
         });

@@ -19,17 +19,39 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
+    <link rel="stylesheet" href="{{asset('css/styleC.css')}}">
+    <link rel="stylesheet" href="{{('assets/css/animate.css')}}">
+    <link rel="stylesheet" href="{{('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Roboto:300,400,500')}}">
+    <link rel="stylesheet" href="{{('assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{('assets/font-awesome/css/font-awesome.min.css')}}">
 
 </head>
 <body>
-<div class="topnav" id="myTopnav">
-    <a href="{{URL::to('homepage')}}" class="">Home</a>
-    <a href="" class="active">Stock</a>
-    <a href="{{URL::to('stockin')}}">Add Stock</a>
-    <a href="{{URL::to('stockout')}}">Stock out</a>
-    <a href="#about" class="pull-right" >Logout</a>
-    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-</div>
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-no-bg" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Bootstrap Navbar Menu Template</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="top-navbar-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{URL::to('homepage')}}">Home</a></li>
+                <li><a href="{{URL::to('stock')}}">Stock</a></li>
+                <li><a href="{{URL::to('stockin')}}">Add stock</a></li>
+                <li><a href="{{URL::to('stockout')}}">Stock out</a></li>
+                {{--<li><a href="#">Plans</a></li>--}}
+                {{--<li><a href="#">Faq</a></li>--}}
+                {{--<li><a class="btn btn-link-3" href="#">Button</a></li>--}}
+            </ul>
+        </div>
+    </div>
+</nav>
 <br>
 <div class="container">
     <h3>STOCK TABLE</h3><br>
