@@ -84,7 +84,6 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="stock_no" name="stock_no"
                                    placeholder="Enter Stock no" required>
-                            <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
                     <div class="form-group row add">
@@ -92,16 +91,14 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="stock_name" name="stock_name"
                                    placeholder="Enter stock name" required>
-                            <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
 
                     <div class="form-group row add">
                         <label class="control-label col-sm-2" >Date:</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" id="date" name="date"
+                            <input type="text" class="form-control" id="date" name="date"
                                    placeholder="Enter date" required>
-                            <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
                     <div class="form-group row add">
@@ -109,7 +106,6 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="stock_amount" name="stock_amount"
                                    placeholder="Enter stock amount" required>
-                            <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
                     <div class="form-group row add">
@@ -117,7 +113,6 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="stock_unit" name="stock_unit"
                                    placeholder="Enter stock unit" required>
-                            <p class="error text-center alert alert-danger hidden"></p>
                         </div>
                     </div>
 

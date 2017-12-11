@@ -52,5 +52,6 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true
-    }
+    },
+    "cartalyst/alerts": "2.0.*"
 }
